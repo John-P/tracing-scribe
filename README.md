@@ -68,7 +68,7 @@ tracing::subscriber::with_default(subscriber, || {
 
 This will produce the following output:
 
-![Successful nested spans output](.images/success.svg)
+![Successful nested spans output](https://raw.githubusercontent.com/helsing-ai/tracing-scribe/main/.images/success.svg)
 
 ### Error Handling
 
@@ -111,7 +111,7 @@ tracing::subscriber::with_default(subscriber, || {
 
 This will produce the following output:
 
-![Error handling output](.images/error_handling.svg)
+![Error handling output](https://raw.githubusercontent.com/helsing-ai/tracing-scribe/main/.images/error_handling.svg)
 
 ### Asynchronous tasks
 
@@ -163,7 +163,7 @@ tracing::subscriber::with_default(subscriber, || {
 
 This will produce the following output:
 
-![Extra information output](.images/extra_info.svg)
+![Extra information output](https://raw.githubusercontent.com/helsing-ai/tracing-scribe/main/.images/extra_info.svg)
 
 ### Custom Colors
 
@@ -183,7 +183,7 @@ let layer = ConsoleLayer::default().with_colors(colors);
 
 See `examples/custom_colors.rs` for a full example:
 
-![Custom colours output](.images/custom_colours.svg)
+![Custom colours output](https://raw.githubusercontent.com/helsing-ai/tracing-scribe/main/.images/custom_colours.svg)
 
 ### Custom Status
 
