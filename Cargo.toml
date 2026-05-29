@@ -1,0 +1,24 @@
+[package]
+name = "tracing-scribe"
+version = "0.1.0"
+edition = "2024"
+authors = ["Matteo Bigoi <matteo.bigoi@helsing.ai>"]
+license = "Apache-2.0"
+description = "A tracing-subscriber layer for beautifully printing spans and events to the terminal as a hierarchical tree."
+repository = "https://github.com/helsing-ai/tracing-scribe"
+homepage = "https://github.com/helsing-ai/tracing-scribe"
+documentation = "https://docs.rs/tracing-scribe"
+readme = "README.md"
+keywords = ["tracing", "logging", "terminal", "subscriber", "console"]
+categories = ["development-tools::debugging", "command-line-interface"]
+
+[dependencies]
+owo-colors = "4.2.3"
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.20", features = ["fmt", "registry"] }
+
+[dev-dependencies]
+insta = "1.43.2"
+regex = "1.11.3"
+strip-ansi-escapes = "0.2.1"
+tokio = { version = "1.47.1", features = ["rt", "time", "macros"] }
