@@ -68,16 +68,7 @@ tracing::subscriber::with_default(subscriber, || {
 
 This will produce the following output:
 
-```
-╭─ ⚙ main
-│  ╭─ ⚙ outer_task
-│  │  ╭─ ⚙ inner_task
-│  │  │  ├─ ! generating unicorns
-│  │  │  ├─ ✔ unicorns generation completed
-│  │  ╰─ ✔ inner_task ⏱ 100.2ms
-│  ╰─ ✔ outer_task ⏱ 100.3ms
-╰─ ✔ main succeeded ⏱ 100.3ms
-```
+![Successful nested spans output](.images/success.svg)
 
 ### Error Handling
 
@@ -120,14 +111,7 @@ tracing::subscriber::with_default(subscriber, || {
 
 This will produce the following output:
 
-```
-╭─ ⚙ main
-│  ╭─ ⚙ failing_task
-│  │  ├─ ⨯ this task is about to fail
-│  │  ├─ ⨯ something went wrong
-│  ╰─ ⨯ failing_task ⏱ 63.8µs
-╰─ ⨯ main failed ⏱ 111.4µs
-```
+![Error handling output](.images/error_handling.svg)
 
 ### Asynchronous tasks
 
@@ -179,13 +163,7 @@ tracing::subscriber::with_default(subscriber, || {
 
 This will produce the following output:
 
-```
-╭─ ⚙ main
-│  ╭─ ⚙ task_with_extra some extra info
-│  │  ├─ ✔ this task has extra information
-│  ╰─ ✔ task_with_extra some extra info ⏱ 2.8µs
-╰─ ✔ main succeeded ⏱ 23.3µs
-```
+![Extra information output](.images/extra_info.svg)
 
 ### Custom Colors
 
@@ -203,7 +181,9 @@ let colors = ColorScheme::default()
 let layer = ConsoleLayer::default().with_colors(colors);
 ```
 
-See `examples/custom_colors.rs` for a full example.
+See `examples/custom_colors.rs` for a full example:
+
+![Custom colours output](.images/custom_colours.svg)
 
 ### Custom Status
 
