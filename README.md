@@ -28,7 +28,7 @@ indicating success or failure states.
 
 ```toml
 [dependencies]
-tracing-scribe = "0.1"
+tracing-scribe = "0.2"
 ```
 
 ## Usage
