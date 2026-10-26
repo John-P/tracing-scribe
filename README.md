@@ -68,6 +68,11 @@ tracing::subscriber::with_default(subscriber, || {
 
 This will produce the following output:
 
+<!--
+The .images/*.svg screenshots are generated from the examples/ directory with
+charmbracelet/freeze. Regenerate them all with `scripts/screenshots.sh`.
+-->
+
 ![Successful nested spans output](https://raw.githubusercontent.com/helsing-ai/tracing-scribe/main/.images/success.svg)
 
 ### Error Handling
