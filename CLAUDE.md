@@ -13,6 +13,9 @@ propagation.
 
 - `src/lib.rs` — single-file implementation plus embedded `#[cfg(test)]` tests
 - `examples/full.rs`, `examples/custom_colors.rs` — runnable demos
+- `examples/readme_*.rs` — the README snippets as runnable examples
+- `scripts/screenshots.sh` — regenerates the README screenshots in `.images/`
+  with [freeze](https://github.com/charmbracelet/freeze)
 - `.github/workflows/ci.yml` — build / test / clippy / fmt on push and PR
 
 ## Common commands
@@ -24,6 +27,7 @@ cargo clippy --all-targets -- -D warnings
 cargo fmt --all -- --check
 cargo run --example full
 cargo run --example custom_colors
+scripts/screenshots.sh   # regenerate .images/*.svg (needs freeze or nix)
 ```
 
 ## Notes
@@ -33,3 +37,7 @@ cargo run --example custom_colors
 - Tests use a `MockWriter` that captures output, strip ANSI escapes and
   durations, then snapshot with `insta`. When test output changes
   intentionally, update the inline snapshots with `cargo insta review`.
+- README screenshots: `ConsoleLayer` writes to stderr, so the script pipes
+  each example's stderr into freeze. When output formatting changes, update
+  the README snippets and the matching `examples/readme_*.rs`, then rerun
+  `scripts/screenshots.sh`.
